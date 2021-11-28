@@ -5,3 +5,4 @@ spec/__pycache__/
 .mypy_cache/
 .vscode/
 rubyrobots/__init__.pyc
+/virtual_env

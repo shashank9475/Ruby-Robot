@@ -50,7 +50,8 @@ Requirements : Python3, pip, mock, unittest
 
 
 #  How to run
-   Insert field size, robot initial position and robot command in test.txt file
+   Insert field size, robot initial position and robot command in test.txt file.
+
    python3 run.py
 
 This will print the final robot position
