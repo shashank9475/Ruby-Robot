@@ -42,7 +42,7 @@ class ReadInputFile:
                              Direction(initialPositionList[2]))
 
     def getMoveCommands(self, line):
-        movementCommand = [RobotCommand(command) for command in list(line.replace('\n', ''))]
-        return movementCommand
+        commands = [RobotCommand(command) for command in list(line.replace('\n', ''))]
+        return commands
 
 

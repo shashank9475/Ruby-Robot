@@ -1,77 +1,60 @@
-# MarsRover-python
-MarsRover is a programming exercise aimed to put in practice different principles and techniques,e.g.,OOP, TDD, Domain Driven Design, etc. 
-Here a possible solution in Python is presented.
+RUBY ROBOTS
 
-## MarsRover Problem Statement 
-*Original problem statement from https://github.com/priyaaank/MarsRover*
+Prototypes of a squad of ruby robot should be developed. A ruby robot is a robot which is able to explore and interact with the outer world in some  degree by moving and exploring. We want to navigate our Ruby Robots through an open field and test its Geo cache mapping functionality.
 
-A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth. 
+Our robots position is represented by a combination of an x and y co-ordinates and a letter representing one of the four cardinal compass points. The test field is divided up into a grid to simplify navigation. An example position might be 1, 1, N, meaning our robot is in the bottom left corner and facing North.
 
-A rover's position and location is represented by a combination of x and y co-ordinates and a letter representing one of the four cardinal compass points. The plateau is divided up into a grid to simplify navigation. An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North. 
+In order to control the ruby robot,we can send a simple string of letters. The only valid possible letters are 'L', 'R' and 'M'. 'L' and 'R' makes our robot spin 90 degrees left or right respectively, without moving from its current position.
 
-![sample rover grid](rover-grid.png)
-
-Sample rovers positioned at a 2x2 Plateau
-
-In order to control a rover, NASA sends a simple string of letters. The possible letters are ```'L', 'R' and 'M'```. 'L' and 'R' makes the rover spin 90 degrees left or right respectively, without moving from its current spot. 'M' means move forward one grid point, and maintain the same heading.
+'M' means move forward one grid point, and maintain the same heading.
 
 Assume that the square directly North from (x, y) is (x, y+1).
 
-**INPUT**
+Input:
 
-The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 0,0.
+The first line of input is the upper-right coordinates of the test field, the lower-left coordinates are assumed to be 0,0.
 
-The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover's position, and the second line is a series of instructions telling the rover how to explore the plateau. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover's orientation.
+The rest of the input is information to the robots that have been deployed. Each robot has two lines of input. The first line gives the robot's position, and the second line is a series of instructions telling the robot how to explore the test field.
 
-Each rover will be finished sequentially, which means that the second rover won't start to move until the first one has finished moving.
+The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the robot orientation.
 
-**OUTPUT**
+Each robot run will be finished sequentially, which means that the second robot run can not start to move until the first one has finished.
 
-The output for each rover should be its final co-ordinates and heading.
+Output:
+
+The output for each robot should be its final co-ordinates and heading.
+
 
 Test Input:
-```
-5 5
 
-1 2 N
+10 10
 
-LMLMLMLMM
+2 3 E
 
-3 3 E
+RMRMRLMRMRMRMR
 
-MMRMMRMRRM
-```
+5 4 W
+
+LMRMLMRMRLMRRM
+
+
 Expected Output:
-```
-1 3 N
 
-5 1 E
-```
-## Installing
+1 2 W
 
-Requirements : Python3, pip
+3 2 E
 
-It is recommended to use virtualenv:
-```
-virtualenv /path/to/ENV/
-source /path/to/ENV/bin/activate
-```
-Installing MarsRover
-```
-   git clone https://github.com/codergolem/marsRover-python
-   cd marsRover-python
-   pip3 install . 
-```
-## How to use:
-###  Running the test input
-```
+#  Installing
+
+Requirements : Python3, pip, mock, unittest
+
+
+#  How to run
+   Insert field size, robot initial position and robot command in test.txt file
    python3 run.py
-```
-This will take the test input from ```inputFile.txt``` and print the Rover(s) final position(s) to stdout.
+
+This will print the final robot position
     
-### Modifying the input
-By editing ```inputFile.txt```  and running ```run.py``` again you can test different set of instructions 
-## Running the tests
-```
-python3 -m pytest
-```
+#  Run test cases
+
+   python3 -m unittest <python file to test>
